@@ -24,7 +24,7 @@ export class Gist {
   }
 
   public async update(file: string, data: Record<string, string>) {
-    const content = JSON.stringify(data);
+    const content = JSON.stringify(data, null, 2);
     const url = `https://api.github.com/gists/${this.GIST_ID}`;
     const response = await fetch(url);
     const gist = await response.json();
