@@ -1,0 +1,21 @@
+name: "Run tests"
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: "Install Node"
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: | 
+          yarn
+      - name: "Run"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          N8N_NOTIFICATION_URL: ${{ secrets.N8N_NOTIFICATION_URL }}
+        run: yarn execute
