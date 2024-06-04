@@ -1,0 +1,20 @@
+{
+  "name": "itch-community-notification",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsnd --respawn   --transpile-only  ./src/index.ts",
+    "execute": "tsnd --transpile-only  ./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^20.14.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "jsdom": "^24.1.0"
+  }
+}
