@@ -20,4 +20,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           N8N_NOTIFICATION_URL: ${{ secrets.N8N_NOTIFICATION_URL }}
-        run: yarn execute -n telegram
+        run: yarn execute -n telegram -v
