@@ -1,3 +1,5 @@
+import { program } from "commander";
+
 const Reset = "\x1b[0m";
 const Bright = "\x1b[1m";
 const Dim = "\x1b[2m";
@@ -26,7 +28,7 @@ const BgCyan = "\x1b[46m";
 const BgWhite = "\x1b[47m";
 const BgGray = "\x1b[100m";
 
-export class Logger {
+class Logger {
   private verbose: boolean;
 
   constructor({
@@ -46,3 +48,9 @@ export class Logger {
     }
   }
 }
+
+const getLogger = () => {
+  const { verbose } = program.opts();
+  return new Logger({ verbose });
+};
+export { getLogger };
