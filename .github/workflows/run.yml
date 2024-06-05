@@ -19,5 +19,6 @@ jobs:
       - name: "Run"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          N8N_NOTIFICATION_URL: ${{ secrets.N8N_NOTIFICATION_URL }}
+          TELEGRAM_BOT_API_KEY: ${{ secrets.TELEGRAM_BOT_API_KEY }}
+          TELEGRAM_CHANNEL: ${{ secrets.TELEGRAM_CHANNEL }}
         run: yarn execute -n telegram -v

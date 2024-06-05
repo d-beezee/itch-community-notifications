@@ -18,16 +18,10 @@ export class TelegramNotifier implements Notifier {
     const keyboard = {
       inline_keyboard: [[{ text: "Open on itch.io", url }]],
     };
-    try {
-      const result = await fetch(
-        `https://api.telegram.org/bot${this.BOT_API_KEY}/sendMessage?chat_id=${
-          this.MY_CHANNEL_NAME
-        }&text=${message}&reply_markup=${JSON.stringify(keyboard)}`
-      );
-
-      console.log(await result.json());
-    } catch (error) {
-      console.error(error);
-    }
+    await fetch(
+      `https://api.telegram.org/bot${this.BOT_API_KEY}/sendMessage?chat_id=${
+        this.MY_CHANNEL_NAME
+      }&text=${message}&reply_markup=${JSON.stringify(keyboard)}`
+    );
   }
 }
