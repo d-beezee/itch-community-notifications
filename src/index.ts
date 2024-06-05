@@ -7,7 +7,7 @@ program
   .addOption(
     new Option("-n, --notifier [notifierType]", "the notifier to use")
       .choices(options)
-      .default("n8n")
+      .default("console")
   )
   .addOption(
     new Option("-v, --verbose", "output extra debugging").default(false)
