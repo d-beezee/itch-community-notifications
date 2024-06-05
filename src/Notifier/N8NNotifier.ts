@@ -7,6 +7,7 @@ export class N8NNotifier implements Notifier {
     if (gameNumber === 0) return;
 
     for (const key in data) {
+      console.log(`Sending notification for ${key} - ${data[key]}`);
       await this.send(`Community copy available for ${key}`, data[key]);
     }
   }
