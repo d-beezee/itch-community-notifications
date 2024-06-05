@@ -33,8 +33,10 @@ const main = async () => {
   logger.log("Games with community copies retrieved");
   logger.log(`Games with community copies: ${JSON.stringify(withCopies)}`);
 
-  logger.log(`Notifiying with ${notifier}`);
-  await NotifierFactory.createNotifier(notifier).notify(withCopies);
+  if (Object.keys(withCopies).length > 0) {
+    logger.log(`Notifiying with ${notifier}`);
+    await NotifierFactory.createNotifier(notifier).notify(withCopies);
+  }
 
   const gamesWithoutCopies = games.getGamesObject(games.withoutCommunityCopies);
   logger.log("Games without community copies retrieved");
