@@ -1,7 +1,7 @@
 import { Option, program } from "commander";
 import { Games } from "./Games";
 import { Logger } from "./Logger";
-import { NotifierFactory, options } from "./Notifier/NotifierFactory";
+import { NotifierFactory, options } from "./Notifier/factory/NotifierFactory";
 
 program
   .addOption(

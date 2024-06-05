@@ -1,6 +1,6 @@
-import { Notifier } from ".";
-import { ConsoleLogNotifier } from "./ConsoleLogNotifier";
-import { N8NNotifier } from "./N8NNotifier";
+import { Notifier } from "..";
+import { ConsoleLogNotifier } from "../ConsoleLogNotifier";
+import { N8NNotifier } from "../N8NNotifier";
 
 const notifierTypes: Record<string, new () => Notifier> = {
   n8n: N8NNotifier,
